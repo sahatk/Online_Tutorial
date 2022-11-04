@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:100,200,300,400,500,600,700,800,900');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 :root{ --clr: #20415c;}
 body{
@@ -12,12 +14,17 @@ body{
     background: var(--clr);
 }
 .navigation{
+    width: 65px;
+    height: 65px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .menuToggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 65px;
     height: 65px;
@@ -26,17 +33,23 @@ body{
     border-radius: 50%;
     cursor: pointer;
     z-index: 10;
-}
-.menuToggle::after{
-    content:"+";
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3em;
+    transform: translateY(-30px);
     color: #fff;
+    font-size: 3em;
+}
+.menuToggle::before{
+    content:'';
+    position: absolute;
+    
     transition: 1.5s;
 }
-.menuToggle:hover::before{
+.menuToggle.active::before{
     transform: rotate(225deg);
+}
+.menu{
+    position: absolute;
+    width: 360px;
+    height: 60px;
+    background: #fff;
+    border-radius: 70px;
 }
