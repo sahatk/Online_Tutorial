@@ -1,0 +1,25 @@
+body {
+    /* background-color: #000b00;
+    color: #fff; */
+}
+.tooltip {
+    position: relative;
+    padding: 10px 30px 10px 20px;
+    margin: 50px 30px 30px;
+    background: linear-gradient(210deg, rgba(110,154,211,0) 0%,rgba(110,154,211,0) 30px,rgba(110,154,211,1) 30px,rgba(110,154,211,1) 100%);
+    box-sizing: border-box;
+}
+
+.tooltip:after {
+    content: '';
+    overflow: hidden;
+    position: absolute;
+    top: -34.64px;
+    right: 0;
+    width: 60px;
+    height: 34.64px;
+    transform: rotate(60deg);
+    transform-origin:bottom left;
+    background: linear-gradient(150deg, rgba(48,100,121,0) 0%,rgba(48,100,121,0) 30px,rgba(48,100,121,1) 30px,rgba(48,100,121,1) 100%);
+    box-shadow: 0 4px 1px -1px rgba(0,0,0,.2);
+  }

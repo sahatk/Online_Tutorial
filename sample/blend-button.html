@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/blend-button.css">
+</head>
+<body>
+    <button>
+        <span class="back">
+            <span></span>
+        </span>
+        Make these cool buttons
+    </button>
+    <button>
+        <span class="back">
+            <span></span>
+        </span>
+        Using mix-blend-mode and custom properties
+    </button>
+</body>
+<script>
+  const UPDATE = ({target, x, y }) => {
+  const bounds = target.getBoundingClientRect()
+  target.style.setProperty('--x', x - bounds.left)
+  target.style.setProperty('--y', y - bounds.top)
+}
+
+const BTNS = document.querySelectorAll('button')
+BTNS.forEach(BTN => BTN.addEventListener('pointermove', UPDATE))
+</script>
+</html>
