@@ -1,0 +1,754 @@
+.coupon_wrap .toggle_expand_box {
+    display: block;
+    padding: 20px;
+}
+
+.coupon_wrap .coupon_ticket {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 13.4rem;
+    margin: 20px 0;
+}
+
+.coupon_wrap .coupon_ticket .coupon_ticket_link {
+    display: block;
+    width: inherit;
+}
+
+.coupon_wrap .coupon_ticket .left_area {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+    filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.15));
+    padding: 2rem 1.5rem 2rem 2rem;
+    border-radius: 1rem;
+}
+
+.coupon_wrap .coupon_ticket .left_area::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 39px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 100%;
+    box-shadow: inset 4px -6px 4px -6px rgba(0, 0, 0, 0.2);
+}
+
+.coupon_wrap .coupon_ticket .left_area::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 39px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+    box-shadow: inset 4px 7px 3px -6px rgba(0, 0, 0, 0.18);
+}
+
+input.props_item {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    box-sizing: content-box;
+    border-radius: 0.4rem;
+    width: 2rem;
+    height: 2rem;
+    background: url("../images/icon/icon_checkbox.png") no-repeat 0 0/100% auto;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+.coupon_wrap .coupon_ticket .left_area .coupon_discount {
+    display: inline-block;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.6rem;
+    color: var(--font-color-main);
+    margin-bottom: 1rem;
+}
+
+.coupon_wrap .coupon_ticket .left_area .coupon_tit {
+    font-size: 1.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    line-height: 140%;
+    height: auto;
+    height: 4rem;
+    color: var(--font-color-main);
+    margin-bottom: 0.8rem;
+}
+
+.coupon_wrap .coupon_price {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #999;
+    letter-spacing: -0.028rem;
+}
+
+.coupon_wrap .coupon_txt {
+    font-size: 1.4rem;
+    line-height: 1.96rem;
+}
+
+
+
+/*! reset */
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+    word-break: break-all;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10rem;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    text-size-adjust: none;
+    font-weight: 400;
+    font-family: "Pretendard", "Malgun Gothic", "맑은 고딕", Dotum, "돋움", arial, verdana, sans-serif;
+    word-break: keep-all;
+    word-wrap: break-word;
+    letter-spacing: 0;
+}
+
+@media (max-width: 374px) {
+    html {
+        font-size: calc(10px + 6 * ((100vw - 375px) / 375));
+    }
+}
+
+@media (min-width: 375px) and (max-width: 500px) {
+    html {
+        font-size: calc(10px + 20 * ((100vw - 375px) / 500));
+    }
+}
+
+@media (min-width: 501px) or (orientation: landscape) {
+    html {
+        font-size: 10px;
+    }
+}
+
+body {
+    background-color: #ffffff;
+    color: #666;
+    line-height: 1.5;
+}
+
+img {
+    border: 0;
+    border-style: none;
+    display: block;
+    max-width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+button {
+    border: 0;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+button,
+input,
+select,
+optgroup,
+textarea {
+    margin: 0;
+    font-size: 100%;
+    font-family: inherit;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset {
+    border: 0;
+}
+
+legend {
+    color: #000;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+    line-height: 1;
+}
+
+caption,
+hr,
+legend {
+    width: 0px;
+    height: 0px;
+    font-size: 1px;
+    text-indent: -9999em;
+    line-height: 0;
+}
+
+/*
+ * Render the `main` element consistently in IE.
+ */
+main {
+    display: block;
+}
+
+/* Text-level semantics
+  ========================================================================== */
+/*
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+    border-bottom: none;
+    /* 1 */
+    text-decoration: underline;
+    /* 2 */
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+    /* 2 */
+}
+
+/*
+ * Add the correct font size in all browsers.
+ */
+small {
+    font-size: 80%;
+}
+
+/*
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+/* Forms
+  ========================================================================== */
+/*
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+    /* 1 */
+    overflow: visible;
+}
+
+/*
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+    /* 1 */
+    text-transform: none;
+}
+
+/*
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+    -webkit-appearance: button;
+}
+
+/*
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+/*
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+/*
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+    vertical-align: baseline;
+}
+
+/*
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+    overflow: auto;
+}
+
+/*
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+/*
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+    -webkit-appearance: textfield;
+    /* 1 */
+    outline-offset: -2px;
+    /* 2 */
+}
+
+/*
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/*
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    /* 1 */
+    font: inherit;
+    /* 2 */
+}
+
+/* Interactive
+  ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+    display: block;
+}
+
+/* Misc
+  ========================================================================== */
+/*
+ * Add the correct display in IE 10+.
+ */
+template {
+    display: none;
+}
+
+/*
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+    display: none;
+}
+
+/* CSS Document */
+em {
+    font: inherit;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+p,
+form {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+dl {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+dl dt {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+ol li {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+.hidden {
+    display: none;
+}
+
+strong {
+    font-weight: normal;
+}
+
+pre {
+    font-family: "Pretendard";
+    word-break: break-all;
+}
+
+table th {
+    font-weight: 400;
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset legend {
+    display: none;
+}
+
+table caption {
+    display: none;
+}
+
+hr {
+    display: none;
+}
+
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+    background: none;
+    font-family: "Pretendard";
+    cursor: pointer;
+    padding: 0;
+}
+
+button span {
+    position: relative;
+}
+
+select {
+    display: inline-block;
+    border: 1px solid #d6d6d6;
+    color: #767676;
+    font-family: "Pretendard";
+    font-size: 1.2rem;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+option {
+    display: block !important;
+    cursor: pointer;
+}
+
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 1.2rem;
+    -webkit-shadow: none;
+    border: 1px solid #bbb;
+    color: #2b2b2b;
+    width: 100%;
+    padding: 10rem;
+    font-family: "Pretendard";
+    box-sizing: border-box;
+}
+
+input[type=text],
+input[type=password] {
+    border: solid 1px #d6d6d6;
+    padding: 5rem 10rem;
+    vertical-align: middle;
+    font-family: "Pretendard";
+    color: #2b2b2b;
+    font-size: 16rem;
+    -webkit-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type=radio] {
+    vertical-align: middle;
+}
+
+input[type=check] {
+    vertical-align: middle;
+}
+
+input[type=file] {
+    vertical-align: middle;
+    width: 300rem;
+    border: 1px solid #d4d4d4;
+}
+
+input[type=date] {
+    font-family: "Pretendard";
+}
+
+input[type=text]::-ms-clear {
+    display: none;
+}
+
+button[type=submit] {
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+input[type=submit] {
+    font-family: "Pretendard";
+    cursor: pointer;
+    box-sizing: content-box;
+}
+
+.skip_menu,
+.hide {
+    display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.hide {
+    display: none;
+}
+
+.border_none {
+    border: none !important;
+    background-image: none;
+}
+
+ul li.border_none {
+    border: none;
+    background-image: none;
+}
+
+td.align_left {
+    text-align: left;
+    padding-left: 10rem !important;
+}
+
+.alignl {
+    text-align: left !important;
+}
+
+.touchDis {
+    touch-action: none;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+}
+
+.touchDis2 {
+    touch-action: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.hdtext {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    line-height: 0;
+    color: transparent;
+    position: absolute;
+    top: 0;
+    left: -999999999rem;
+}
+
+/* ==========================================================================
+    Print styles.
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+ ========================================================================== */
+@media print {
+
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster: http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+/*! common */
+.hide-txt {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    font-size: 1px;
+    line-height: 0;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+@media (max-width: 1024px) {
+    a .hide-txt {
+        font-size: 0;
+    }
+}
+
+[tabindex="-1"]:focus {
+    outline: 0;
+}
+
+/*! 반응형 미지원 컨텐츠의 모바일 화면시 가림막 소스 */
+.mobile-mode-dimm-container {
+    display: none;
+}
