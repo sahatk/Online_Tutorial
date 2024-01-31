@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+* {padding: 0; margin: 0;}
+a {text-decoration: none; color: #666;}
+li {list-style: none;}
+body {
+  background: #0137a1 url(https://tistory3.daumcdn.net/tistory/2808281/skin/images/background05.jpg) no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Abel', sans-serif;
+  font-size: 14px;
+  line-height: 1.6em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body::before {
+  content:'';
+  position: fixed; top: 0; left: 0;
+  z-index: -1;
+  background: rgba(4,127,21,0.9);
+  width: 100%; height: 100%;
+}
+#tab-menu {
+  width: 600px; 
+  background : rgba(0,57,11,1);
+  position: absolute; left: 50%; top: 100px;
+  transform: translatex(-50%);
+  border-radius: 4px;
+}
+#tab-menu ul {
+  overflow: hidden;
+}
+#tab-menu li {
+  float: left; 
+  width: 90px; 
+  text-align: center;
+}
+#tab-menu li a {
+  display: block; 
+  color: #fff; 
+  padding: 15px 20px; 
+  font-weight: bold;
+}
+#tab-menu li.active a {
+  border-bottom: 3px solid #F8A714;
+  color: #F8A714;
+}
+#tab-menu li div {
+  position: absolute; 
+  left:0; 
+  top: 55px; 
+  width: 100%;
+  background: #fff; 
+  text-align: left;
+  padding: 20px; 
+  box-sizing: border-box;
+  border-radius: 0 0 4px 4px;
+}
