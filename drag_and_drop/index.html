@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css"/>
+  <link rel="stylesheet" href="../drag_and_drop/css/drop.css">
+</head>
+<body>
+  <div class="dropzone_wrap">
+    <!-- dropzone 박스 영역 -->
+    <div class="dropzone"></div>
+
+    <!-- 포스팅 - 이미지/동영상 dropzone 영역 -->
+    <ul id="dropzone-preview">
+      <li id="dropzone-preview-list">
+        <img data-dz-thumbnail="data-dz-thumbnail" src="#" alt="Dropzone-Image"/>
+        <h6 data-dz-name="data-dz-name">&nbsp;</h6>
+        <p data-dz-size="data-dz-size"></p>
+        <strong data-dz-errormessage="data-dz-errormessage"></strong>
+        <button type="button" data-dz-remove="data-dz-remove">Delete</button>
+      </li>
+    </ul>
+
+    <!-- S : JavaScript가 없는 경우 대체 -->
+    <!-- <form action="/file-upload" class="dropzone">
+      <div class="fallback">
+        <input name="file" type="file" multiple />
+      </div>
+    </form> -->
+    <!-- E : JavaScript가 없는 경우 대체 -->
+  </div>
+</body>
+<script>
+  Dropzone.autoDiscover = false; // 자동 검색 제거
+  let dropzonePreviewNode = document.querySelector('#dropzone-preview-list');
+  dropzonePreviewNode.id = '';
+  let previewTemplate = dropzonePreviewNode.parentNode.innerHTML;
+  dropzonePreviewNode.parentNode.removeChild(dropzonePreviewNode);
+
+  const dropzone = new Dropzone(".dropzone", {
+    url: "https://httpbin.org/post", // 파일을 업로드할 서버 주소 url. 
+    method: "post", // 기본 post로 request 감. put으로도 할수있음
+
+    previewTemplate: previewTemplate, // 만일 기본 테마를 사용하지않고 커스텀 업로드 테마를 사용하고 싶다면
+    previewsContainer: '#dropzone-preview', // 드롭존 영역을 .dropzone이 아닌 다른 엘리먼트에서 하고싶을때
+  });
+</script>
+</html>
