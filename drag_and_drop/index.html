@@ -20,7 +20,7 @@
         <h6 data-dz-name="data-dz-name">&nbsp;</h6>
         <p data-dz-size="data-dz-size"></p>
         <strong data-dz-errormessage="data-dz-errormessage"></strong>
-        <button type="button" data-dz-remove="data-dz-remove">Delete</button>
+        <button type="button" data-dz-remove="data-dz-remove">삭제</button>
       </li>
     </ul>
 
@@ -35,17 +35,43 @@
 </body>
 <script>
   Dropzone.autoDiscover = false; // 자동 검색 제거
-  let dropzonePreviewNode = document.querySelector('#dropzone-preview-list');
-  dropzonePreviewNode.id = '';
-  let previewTemplate = dropzonePreviewNode.parentNode.innerHTML;
-  dropzonePreviewNode.parentNode.removeChild(dropzonePreviewNode);
+  let dropzonePreviewNode = document.querySelector('#dropzone-preview-list'); // 파일 업로드 리스트 영역 li
+  dropzonePreviewNode.id = ''; // 중복 회피를 위해 id 없앰.
+  let previewTemplate = dropzonePreviewNode.parentNode.innerHTML; // 엘리먼트 전체를 저장 (템플릿)
+  dropzonePreviewNode.parentNode.removeChild(dropzonePreviewNode); // 저장하고 나서 삭제해야 아이디가 중복 안됨.
 
   const dropzone = new Dropzone(".dropzone", {
+
+    /* S : 서버 */
     url: "https://httpbin.org/post", // 파일을 업로드할 서버 주소 url. 
     method: "post", // 기본 post로 request 감. put으로도 할수있음
+    /* E : 서버 */
 
+    /* S : 테마 */
     previewTemplate: previewTemplate, // 만일 기본 테마를 사용하지않고 커스텀 업로드 테마를 사용하고 싶다면
     previewsContainer: '#dropzone-preview', // 드롭존 영역을 .dropzone이 아닌 다른 엘리먼트에서 하고싶을때
+    /* E : 테마 */
+
+    /* S : 전송 방식 및 여러 기능 */
+    autoProcessQueue: false, // 자동으로 보내기. true : 파일 업로드 되자마자 서버로 요청, false : 서버에는 올라가지 않은 상태. 따로 this.processQueue() 호출시 전송
+    autoQueue: false, // 드래그 드랍 후 바로 서버로 전송
+    /* E : 전송 방식 및 여러 기능 */
+
+    /* S : 파일 제한 설정 */
+    maxFiles: 1, // 업로드 파일수
+    maxFilesize: 100, // 최대업로드용량 : 100MB
+    uploadMultiple: true, // 다중업로드 기능
+    parallelUploads: 2, // 동시파일업로드 수(이걸 지정한 수 만큼 여러파일을 한번에 넘긴다.)
+    // addRemoveLinks: true, // 업로드 후 파일 삭제버튼 표시 여부
+    // dictRemoveFile: '삭제', // 삭제버튼 표시 텍스트
+    acceptedFiles: '.jpeg,.jpg,.png,.gif,.JPEG,.JPG,.PNG,.GIF', // 이미지 파일 포맷만 허용
+    /* E : 파일 제한 설정 */
+
+    /* S : 파일 업로드 리스트 스타일 */
+    createImageThumbnails: true, //파일 업로드 썸네일 생성
+    thumbnailWidth: 240, //파일 업로드 썸네일 size
+    thumbnailHeight: 240, //파일 업로드 썸네일 size
+    /* E : 파일 업로드 리스트 스타일 */
   });
 </script>
 </html>
