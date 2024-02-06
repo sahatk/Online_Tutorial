@@ -30,5 +30,32 @@ function tabList(e) {
 const tabLinks = tabMenu.querySelectorAll("ul > li > a");
 tabLinks.forEach((link) => {
   link.addEventListener("click", tabList);
-  link.addEventListener("focus", tabList);
 });
+
+const tabs = document.querySelectorAll('#tab-menu li > a');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabs.forEach((tab, index) => {
+  tab.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab' && !e.shiftKey) {
+      e.preventDefault();
+      tabContents[index].setAttribute('tabindex', '0');
+      tabContents[index].focus();
+    } else if (e.key === 'Tab' && e.shiftKey) {
+      e.preventDefault();
+      const prevTabIndex = index === 0 ? tabContents.length - 1 : index - 1;
+      tabs[prevTabIndex].querySelector('a').focus();
+    }
+  });
+});
+
+tabContents.forEach((tabContent, index) => {
+  tabContent.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab' && e.shiftKey) {
+      e.preventDefault();
+      tabs[index].querySelector('a').focus();
+    }
+  });
+});
+
+
