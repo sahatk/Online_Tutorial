@@ -1,9 +1,10 @@
 
-const tabMenu = document.querySelector("#tab-menu");
-const childDivs = tabMenu.querySelectorAll("ul > li > .tab-content");
+const tabMenu = document.querySelector(".tab-menu");
+const tabs = document.querySelectorAll('.tab-menu li > a');
+const tabContents = document.querySelectorAll('.tab-content');
 
 // 모든 컨텐츠 내용을 숨김
-childDivs.forEach((div) => {
+tabContents.forEach((div) => {
   div.style.display = "none";
 });
 
@@ -32,8 +33,7 @@ tabLinks.forEach((link) => {
   link.addEventListener("click", tabList);
 });
 
-const tabs = document.querySelectorAll('#tab-menu li > a');
-const tabContents = document.querySelectorAll('.tab-content');
+
 
 tabs.forEach((tab, index) => {
   tab.addEventListener('keydown', (e) => {
