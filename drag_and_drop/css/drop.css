@@ -14,7 +14,7 @@ li {
 }
 
 .dropzone_wrap {
-  min-width: 1920px;
+  width: 100%;
 }
 
 #dropzone-preview {
