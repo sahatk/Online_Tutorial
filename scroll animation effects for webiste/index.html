@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Animation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layer">
+    <img src="./img/plane.png" alt="비행기" class="plane">
+  </div>
+  <section></section>
+  <div class="text">
+    <h2>Welcome To<br/><span>Thailand</span></h2>
+  </div>
+  <section class="sec2"></section>
+  <script>
+    let layer = document.querySelector('.layer')
+    window.addEventListener('scroll', () => {
+      let value = window.scrollY
+      layer.style.left = value*2+'px'
+    })
+  </script>
+</body>
+</html>
