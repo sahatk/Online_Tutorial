@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Dropdown List Tutorial</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="dropdown">
+      <input type="text" readonly placeholder="select options" class="output">
+      <div class="list">
+        <input type="text" placeholder="add other item" maxlength="30"
+         class="input_item">
+         <div class="item">option 01</div>
+         <div class="item">option 02</div>
+         <div class="item">option 03</div>
+         <div class="item">option 04</div>
+         <div class="item">option 05</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let dropdown_items = document.querySelectorAll('.container .dropdown .list .item');
+    let output = document.querySelector('.container .dropdown .output');
+
+    dropdown_items.forEach(items =>{
+      items.onclick = () => {
+        output.value = items.innerHTML;
+      }
+    })
+
+    let dropdown_input = document.querySelector('.container .dropdown .list .input_item');
+    
+    dropdown_input.oninput = () => {
+      output.value = dropdown_input.value;
+    }
+  </script>
+</body>
+</html>

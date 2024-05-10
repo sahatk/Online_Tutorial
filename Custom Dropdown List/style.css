@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:100,200,300,400,500,600,700,800,900');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  transition: .2s linear;
+}
+
+body {
+  background: linear-gradient(cyan, deeppink);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.container .dropdown  {
+  perspective: 1000px;
+}
+
+.container .dropdown .output {
+  padding: 15px;
+  font-size: 22px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  color: #334;
+  text-align: center;
+  width: 400px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.container .dropdown .list {
+  background-color: #fff;
+  padding: 5px 10px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  width: 400px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  transform-style: preserve-3d;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  opacity: 0;
+}
+
+.container .dropdown:hover .list,
+.container .dropdown .list:hover,
+.container .dropdown .output:focus .list,
+.container .dropdown .output:focus-within .list{
+  transform: rotateX(0);
+  opacity: 1;
+}
+
+.container .dropdown .list .item {
+  font-size: 22px;
+  background-color: #eee;
+  color: #334;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px 15px;
+}
+
+.container .dropdown .list .item:hover {
+  background-color: #334;
+  color: #fff;
+  padding-left: 40px;
+}
+
+.container .dropdown .list .input_item{
+  font-size: 22px;
+  border: 2px solid #334;
+  margin-top: 10px;
+  padding: 10px 15px;
+  text-transform: none;
+  border-radius: 5px;
+  width: 100%;
+}
