@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Explore</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section class="banner">
+        <img src="./images/sky.jpg" id="sky" alt="하늘">
+        <img src="./images/pyramid.png" id="pyramid" alt="">
+        <img src="./images/text.png" id="text" alt="">
+        <img src="./images/stone.png" id="stone" alt="">
+        <img src="./images/man.png" id="man" alt="">
+    </section>
+    <section id="about">
+        <div class="container">
+            <div class="textBx">
+                <h2 class="title">Welcome To Egypt</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi veniam voluptatum rerum similique hic quo eaque magni deleniti soluta. Asperiores, itaque accusantium. Provident officiis nobis, delectus voluptatibus fugiat ipsam corrupti dolorem eos natus ipsum dignissimos ea distinctio numquam alias deleniti eveniet id! Pariatur nulla, repellendus quaerat quia libero necessitatibus asperiores.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="imgBX">
+                <img src="./images/img1.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <script>
+        let pyramid = document.getElementById('pyramid');
+        let text = document.getElementById('text');
+        let stone = document.getElementById('stone');
+        let man = document.getElementById('man');
+        window.addEventListener('scroll', () => {
+            let value = window.scrollY;
+            pyramid.style.right = value * 0.25 + 'px';
+            text.style.left = value * 2 + 'px';
+            stone.style.right = value * 1 + 'px';
+            man.style.left = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
