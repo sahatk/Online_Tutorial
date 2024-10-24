@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Hover Effects</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+  <div class="banner" data-text="Creative"></div>
+  <script>
+    let banner = document.querySelector('.banner');
+    banner.onmousemove = function(e) {
+      let x = e.pageX - banner.offsetLeft;
+      let y = e.pageY - banner.offsetTop;
+      banner.style.setProperty('--x', x + 'px');
+      banner.style.setProperty('--y', y + 'px');
+    }
+  </script>
+</body>
+</html>
