@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation Skills Row Bar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+    <div class="box"></div>
+    <h2>Liquid</h2>
+  </section>
+  <svg>
+    <filter id="gooey">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+      <feColorMatrix values="
+      1 0 0 0 0
+      0 1 0 0 0
+      0 0 1 0 0
+      0 0 0 50 -10" />
+    </filter>
+  </svg>
+  <script>
+    function liquid() {
+      let box = document.querySelector('.box');
+      let e = document.createElement('div');
+      e.setAttribute('class', 'drops');
+      box.appendChild(e);
+
+      let size = Math.random() * 100;
+      e.style.width = 15 + size + 'px'
+      let BoxWidth = box.clientWidth;
+      e.style.left = Math.random() * BoxWidth + 'px'
+
+      setTimeout(function() {
+        box.removeChild(e);
+      }, 5000)
+    }
+
+    setInterval(function() {
+      liquid();
+    }, 200)
+  </script>
+</body>
+</html>
