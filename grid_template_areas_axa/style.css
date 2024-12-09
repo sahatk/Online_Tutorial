@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body[data-body-role="page"]{
+  min-width: 1780px;
+}
+
+.page-wrap {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: 531px 531px 1fr;
+  grid-template-areas: 
+    'banner banner three'
+    'one two three'
+    'one two three'
+  ;
+}
+
+.page-wrap > article {
+  background-color: skyblue;
+  border: 1px solid #000;
+  display: grid;
+}
+
+.page-wrap > article > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* user-banner */
+.page-wrap .user-banner {
+  grid-area: banner;
+  padding: 48px 0 0 40px;
+}
+
+.banner {
+  width: 100%;
+  height: 188px;
+  border-radius: 8px;
+  background-color: #2389F0;
+}
+
+/* one-column */
+.page-wrap .one-column {
+  grid-area: one;
+  padding: 0 0 40px 40px;
+}
+
+.object {
+  width: 100%;
+  height: 228px;
+  background-color: #2389F0;
+}
+
+.strong-point {
+  width: 100%;
+  height: 238px;
+  margin-top: 40px;
+  background-color: #2389F0;
+}
+
+/* two-column */
+.page-wrap .two-column {
+  grid-area: two;
+  padding: 0 0 40px 40px;
+}
+
+.advise {
+  width: 100%;
+  height: 228px;
+  background-color: #2389F0;
+}
+
+.notice {
+  width: 100%;
+  height: 238px;
+  margin-top: 40px;
+  background-color: #2389F0;
+}
+
+/* three-column */
+.page-wrap .three-column {
+  grid-area: three;
+  padding: 48px 40px 40px 40px;
+  background-color: #FAFBFF;
+}
+
+.feedback-myself {
+  width: 100%;
+  height: 280px;
+  background-color: #2389F0;
+}
+
+.feedback-request {
+  width: 100%;
+  height: 414px;
+  margin-top: 40px;
+  background-color: #2389F0;
+}
