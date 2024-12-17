@@ -291,6 +291,8 @@ body > section {
 }
 
 /* S : 나의 정보 영역 */
+
+/* S : 나의 평가자 */
 #main .info_myself {
   height: 100%;
   padding: 56px 40px;
@@ -351,7 +353,9 @@ body > section {
   background-position: 50% 50%;
   background-image: url("./images/ico_pencil.png");
 }
+/* E : 나의 평가자 */
 
+/* S : 나의 목표 현황 */
 #main .info_myself table {
   width: 100%;
   border-collapse: collapse;
@@ -393,8 +397,9 @@ body > section {
   font-weight: 700;
   line-height: 27px;
 } 
+/* E : 나의 목표 현황 */
 
-
+/* S : 나의 강점 */
 #main .myself_point {
   overflow: auto;
   height: 120px;
@@ -418,6 +423,8 @@ body > section {
   line-height: 21px;
   color: #656E7A;
 }
+/* E : 나의 강점 */
+
 /* E : 나의 정보 영역 */
 
 
