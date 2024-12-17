@@ -1,0 +1,425 @@
+
+/* S : common */
+html, html * { font-family: 'Pretendard'}
+
+body > section {
+  /* min-height: calc(100vh - 133px); */
+}
+
+.page_wrap {
+  padding: 0 40px;
+  overflow: hidden;
+}
+/* E : common */
+
+/* S : Main 공통 */
+#main .page_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background-color: #f4f7ff;
+}
+
+#main .page_wrap > article {
+  margin: 56px 0;
+}
+/* E : Main 공통 */
+
+/* S : 컨텐츠 공통 */
+#main .info_newfdback h2,
+#main .info_fdback h2,
+#main .info_notice h2,
+#main .info_myself h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 33px;
+}
+
+#main .info_newfdback strong,
+#main .info_fdback strong {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 33px;
+  color: #428eef;
+}
+/* E : 컨텐츠 공통 */
+
+#main #left_info {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 286px 157px 166px;
+  grid-gap: 40px;
+  justify-content: center;
+  flex: 1;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  box-sizing: border-box;
+}
+
+/* S : 비주얼 배너 */
+#main .visual_banner {
+  grid-column: 1 / 3;
+  height: 286px;
+  padding: 72px 0 0 40px;
+  border-radius: 8px;
+  background-image: url("./images/axa_bg_main.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  box-sizing: border-box;
+}
+
+#main .visual_banner .ico_axa_main {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 32px;
+  background-image: url("./images/axa_logo_open.png");
+  background-position: 50% 50%;
+  background-size: 48px 48px;
+  background-repeat: no-repeat;
+}
+
+#main .visual_banner h1, #main .visual_banner h1 > span {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #fff;
+}
+
+#main .visual_banner p {
+  margin-top: 4px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  color: #fff;
+}
+/* E : 비주얼 배너 */
+
+/* S : 새로운 피드백 */
+#main .info_newfdback ul {
+  overflow-y : auto;
+  height: calc(100% - 45px);
+  padding: 24px 32px 24px 24px;
+  border: 1px solid #E8EDF5;
+  border-radius: 8px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+#main .info_newfdback li {
+  overflow: hidden;
+  width: calc(100% - 20px);
+  max-width: 684px;
+  font-size: 18px;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#main .info_newfdback li[data-feedbackType*="reply"] a:before {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 4px 8px;
+  border-radius: 80px;
+  vertical-align: middle;
+  font-size: 12px;
+}
+
+#main .info_newfdback li[data-feedbackType="reply1"] a:before {
+  content: '평가자 피드백';
+  color: #4C46F5;
+  border: 1px solid #4C46F5;
+}
+
+#main .info_newfdback li[data-feedbackType="reply2"] a:before {
+  content: '동료 피드백';
+  color: #3FC0C9;
+  border: 1px solid #3FC0C9;
+}
+
+#main .info_newfdback li + li {
+  margin-top: 8px;
+}
+/* E : 새로운 피드백 */
+
+/* S : 공지사항 */
+#main .info_notice ul{
+  overflow-y : auto;
+  height: calc(100% - 45px);
+  padding: 24px;
+  border: 1px solid #E8EDF5;
+  border-radius: 8px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+#main .info_notice li {
+  padding-bottom: 12px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+#main .info_notice li + li {
+  padding-top: 12px;
+}
+
+#main .info_notice li:last-of-type {
+  position: relative;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+#main .info_notice li:last-of-type::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #E8EDF5;
+}
+/* E : 공지사항 */
+
+/* S : 응답해야 할 피드백 */
+#main .info_fdback {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+}
+
+#main .info_fdback > ol {
+  overflow-y: auto;
+  height: calc(100% - 45px);
+  border: 1px solid #e8edf5;
+  background-color: #f4f7ff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+#main .info_fdback > ol > li {
+  position: relative;
+  overflow: hidden;
+  padding: 16px 24px;
+  background-color: #fff;
+}
+
+#main .info_fdback > ol > li + li {
+  border-top: 1px solid #e8edf5;
+}
+
+#main .info_fdback > ol > li::before {
+  position: absolute;
+  content: '';
+  width: 48px;
+  height: 48px;
+  background-image: url("./images/profile_sample.png");
+  background-size: 48px 48px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  top: 18px;
+  left: 24px;
+  border-radius: 50%;
+}
+
+#main .info_fdback > ol > li > div {
+  position: relative;
+  float: left;
+  margin-right: 16px;
+  background-color: transparent;
+}
+
+*[data-role="profilePhoto"].size_medium {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+*[data-role="profilePhoto"] {
+  overflow: hidden;
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  line-height: 200px;
+}
+
+#main .info_fdback > ol dl {
+  display: flex;
+  justify-content: space-between;
+}
+
+#main .info_fdback > ol dt {
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+#main .info_fdback > ol dd {
+  font-size: 14px;
+  line-height: 24px;
+  color: #656E7A;
+}
+
+#main .info_fdback > ol dd:before {
+  content: '요청일 : ';
+  color: #428eef;
+}
+
+#main .info_fdback > ol p {
+  overflow: hidden;
+  display: -webkit-box;
+  height: 1.5rem;
+  margin-top: 4px;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  color: #656E7A;
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+/* E : 응답해야 할 피드백 */
+
+#main #right_info {
+  flex: 0 0 680px;
+  margin-left: 40px;
+}
+
+/* S : 나의 정보 영역 */
+#main .info_myself {
+  height: 100%;
+  padding: 56px 40px;
+  border-radius: 24px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+#main .myself_util {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #E8EDF5;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+#main .myself_util h3 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+}
+
+#main .info_myself h2:not(:first-child) {
+  margin-top: 40px;
+}
+
+#main .myself_util p {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #656E7A;
+}
+
+#main .myself_util button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: 1px solid #4C46F5;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #4C46F5;
+}
+
+#main .myself_util .ico-edit {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: 50% 50%;
+  background-image: url("./images/ico_pencil.png");
+}
+
+#main .info_myself table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px #E8EDF5;
+}
+
+#main .info_myself th,
+#main .info_myself td {
+  border: 1px solid #E8EDF5;
+}
+
+#main .info_myself thead th {
+  height: 37px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #656e7a;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#main .info_myself tbody th,
+#main .info_myself tbody td {
+  height: 43px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#main .info_myself tbody th {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+#main .info_myself tbody td {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+} 
+
+
+#main .myself_point {
+  overflow: auto;
+  height: 120px;
+  padding: 24px;
+  border: 1px solid #E8EDF5;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+#main .myself_point h3 {
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #4C46F5;
+}
+
+#main .myself_point p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #656E7A;
+}
+/* E : 나의 정보 영역 */
+
+
+
+
