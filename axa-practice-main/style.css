@@ -45,7 +45,7 @@ body > section {
 }
 /* E : 컨텐츠 공통 */
 
-#main #left_info {
+#main #visual_area {
   display: grid;
   grid-gap: 15px;
   grid-template-columns: repeat(2, 1fr);
@@ -285,7 +285,7 @@ body > section {
 }
 /* E : 응답해야 할 피드백 */
 
-#main #right_info {
+#main #info_area {
   flex: 0 0 680px;
   margin-left: 40px;
 }
