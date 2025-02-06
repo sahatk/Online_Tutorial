@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+  </head>
+  <body>
+    <p class="text-typing ux-text-el" style="font-size: 3rem">
+      Etribe text 타이핑 애니메이션
+    </p>
+
+    <!-- gsap cdn 또는 파일 첨부 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+
+    <!-- 모듈 생성 -->
+    <script type="module" charset="UTF-8">
+      /******************** layout 부분 ********************/
+      // import { layout } from "./js/showroom/text_common.js";
+      // const btn01 = document.querySelector(".button01");
+      // let btnControl01 = new layout(btn01);
+      // btnControl01.init();
+
+      /******************** layout 부분 ********************/
+
+      /******************** 필요한 부분 ********************/
+      import { TypingText } from "./js/showroom/text_typing.js";
+      let option01 = {
+        duration: 100,
+      };
+
+      const el0 = document.querySelectorAll(".text-typing");
+      let typing01 = new TypingText(el0, option01);
+
+      typing01.init();
+
+      document.addEventListener("DOMContentLoaded", () => {
+        option01.duration = btnControl01.duration;
+
+        typing01.setOption(option01);
+        typing01.play();
+      });
+      /******************** 필요한 부분 ********************/
+    </script>
+  </body>
+</html>
